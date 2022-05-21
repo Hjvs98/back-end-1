@@ -33,5 +33,28 @@
           });
       };
     </script>
+    <form action="">
+      <input type="number" placeholder="Enter Temperature in * Farenheit" id="temp-input">
+      <input type="submit">
+    </form>
+    <script>
+      const num =document.querySelector(`#temp-input`)
+      document.querySelector("form").addEventListener("submit", (e) {
+        e.preventDefault()
+        
+        if (num >= 72) {
+          axios
+          .get("http://localhost:4000/weather/hot")
+        }
+        else if (55 < num <= 71) {
+          axios
+          .get("http://localhost:4000/weather/mild")
+        }
+        else {
+          axios
+          .get("http://localhost:4000/weather/cold")
+        }
+      });  
+    </script>
   </body>
 </html>
